@@ -1,0 +1,117 @@
+//
+//  QLPrefixHeader.pch
+//  BaseProject
+//
+//  Created by RongXing on 2018/11/6.
+//  Copyright © 2018年 Quanling_Xia. All rights reserved.
+//
+
+#ifndef QLPrefixHeader_pch
+#define QLPrefixHeader_pch
+
+
+#ifdef __OBJC__
+
+
+    #import "QLTools.h"
+    #import "UIImage+Helps.h"
+    #import "NSDate+Helps.h"
+    #import "NSString+Helps.h"
+    #import "UIView+Helps.h"
+    #import "UIFont+Helps.h"
+    #import "UIColor+Helps.h"
+    #import "DataCache.h"
+
+#endif
+
+#pragma mark --App相关参数
+/***APP KEY值*/
+#define APP_KEY @""
+/***APP 在appStore 编号 614013788*/
+#define APPID @"982172440" //
+
+#pragma RGB 相关
+//RGB颜色
+#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/25 alpha:a]
+
+
+#pragma mark -- iphone尺寸表
+/*
+        手机型号         屏幕尺寸       屏幕密度        开发尺寸        像素尺寸         倍图
+        4/4S            3.5英寸       326ppi        320*480pt      640*960px      @2x
+        5/5S/5c         4英寸         326ppi        320*480pt      640*1136px     @2x
+        6/6S/7/8        4.7英寸       326ppi        375*667pt      750*1334px     @2x
+        6+/6S+/7+/8+    5.5英寸       401ppi        414*736pt      1242*2208px    @3x
+        X               5.8英寸       458ppi        375*812pt      1125*2436px    @3x
+        XS              5.8英寸       458ppi        375*812pt      1125*2436px    @3x
+        XS Max          6.5英寸       458ppi        414*896pt      1242*2688px    @3x
+        XR              6.1英寸       326ppi        414*896pt      828*1792px     @2x
+ 
+ danger       staturBar  44pt            home  34pt
+ 
+*/
+/**
+ *是否为3.5寸屏幕  640x960 320x480
+ */
+#define DEVICE_IS_IPHONE35 ([[UIScreen mainScreen] bounds].size.height == 480)
+/**
+ *是否为4.0寸屏幕  640x1136 320x568
+ */
+#define DEVICE_IS_IPHONE5 ([[UIScreen mainScreen] bounds].size.height == 568)
+/**
+ *是否为4.7寸屏幕 1125x2001 750*1334 375×667
+ */
+#define DEVICE_IS_IPHONE47 ([[UIScreen mainScreen] bounds].size.height == 667)
+/**
+ *是否为5.5寸屏幕 1242x2208  828x1472   414×736
+ */
+#define DEVICE_IS_IPHONE55 ([[UIScreen mainScreen] bounds].size.height == 736)
+/**
+ *是否为5.8寸屏幕 1242x2208  1125x2436  375x812
+ */
+#define DEVICE_IS_IPHONE58 ([[UIScreen mainScreen] bounds].size.height == 812)
+
+/**
+ *是否为6.5寸屏幕 1242x2208  1125x2436  414x896
+ */
+#define DEVICE_IS_IPHONE65 ([[UIScreen mainScreen] bounds].size.height == 896)
+
+/**
+ *判断是否是全面屏
+ */
+#define isFullScreen ([[UIScreen mainScreen] bounds].size.height >= 812)
+
+/**
+ *判断设备系统版本
+ */
+#define ISIOS(x) ([[[UIDevice currentDevice] systemVersion] floatValue] >= x ? YES : NO)
+
+
+
+#pragma mark --  网络访问图片
+/***网络访问失败照片*/
+#define HTTP_FAILD_IMG [UIImage imageNamed:@"http_fail"]
+/***网络访问成功照片*/
+#define HTTP_SUCCESS_IMG [UIImage imageNamed:@"http_success"]
+/***网络访问成功照片2*/
+#define HTTP_SUCCESS_IMG2 [UIImage imageNamed:@"http_success2"]
+/***没有网络照片*/
+#define HTTP_NO_NET_IMG [UIImage imageNamed:@"http_noNet"]
+
+
+
+
+
+
+/**
+ *  NSLog
+ */
+#ifndef __OPTIMIZE__
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+# define NSLog(...) {}
+#endif
+
+#endif /* QLPrefixHeader_pch */
